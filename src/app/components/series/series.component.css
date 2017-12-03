@@ -2,3 +2,8 @@
     justify-content: center;
     margin: 0 auto;
 }
+
+.column.is-one-fourth {
+    max-width: 30vw;
+    max-height: 80vw;
+}
