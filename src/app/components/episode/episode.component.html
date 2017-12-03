@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-image">
+      <figure class="image">
+        <img src={{poster}} alt="Episode poster">
+      </figure>
+    </div>
+    <header class="card-header">
+      <p class="card-header-title">
+        Ep.{{ episode.Episode }} 
+        {{ episode.Title }}
+        ({{ episode.imdbRating}}/10)
+      </p>
+      
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <p>
+          {{ description }}
+        </p> 
+        <br>
+        <p>
+          Realeased: {{ episode.Released }}
+        </p>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item">Add to watchlist</a>
+      <a href="#" class="card-footer-item">Already seen</a>
+      <a href="#" class="card-footer-item">Button2</a>
+    </footer>
+  </div>
+
+

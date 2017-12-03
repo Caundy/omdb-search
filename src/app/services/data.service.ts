@@ -39,4 +39,9 @@ export class DataService {
         return result;
     }
 
+    getEpisodeDescription (id) {
+        let apiUrl = 'http://www.omdbapi.com/?i=';
+        return this.http.get(`${apiUrl}${id}${this.secretKey}`);
+    }
+
 }

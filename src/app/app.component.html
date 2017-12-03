@@ -9,42 +9,23 @@
         <button class="button" type="submit">FIND</button>
       </form>  
   </div>
-  <div class="column is-one-third" *ngIf="isSeries">
-    <div *ngFor="let season of result">
-        <h1>
-            Season {{ result.indexOf(season) + 1 }}
-          </h1>
-          <h2>
-            Episodes: 
-          </h2>
-          <ul>
-            <li *ngFor="let episode of season.Episodes">
-              <p>
-                Ep. {{ episode.Episode }}
-              </p>
-              <p>
-                {{ episode.Title }}
-              </p>
-              <p>
-                Released: {{ episode.Released }}
-              </p>
-              <p>
-                Rating: {{ episode.imdbRating }}
-              </p>
-            </li>
-          </ul>
-    </div>
-  </div>
-  <div class="column is-one-third" *ngIf="!isSeries && result">
-    <p>
-        {{ result.Title }}
-    </p>
-    <p>
-        {{ result.Released }}
-    </p>
-    <p>
-        {{ result.Runtime }}
-    </p>
-  </div>
 </div> 
+
+  <div class="columns is-centered">
+
+    <div class="column is-four-fifths" *ngIf="isSeries">
+        <app-series [series]=result></app-series>
+    </div>
+
+    
+
+    <app-movie [movie]=result *ngIf="!isSeries"></app-movie>
+
+    <app-not-found *ngIf="notFound"></app-not-found>
+
+  </div>
+
+  <app-footer></app-footer>
+  
+
 
